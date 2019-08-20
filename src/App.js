@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Validation from './Components/Validation';
+import CharCount from './Components/CharCount';
 
 class App extends Component {
   state = {
@@ -34,24 +35,28 @@ class App extends Component {
   render() {
     const inlineStyle = {
       display: 'inline-block',
-      padding: '16px',
+      padding: '6px',
       textAlign: 'center',
-      margin: '16px',
-      border: '1px solid #000'
+      margin: '16px'
     }
     let textMessages = null;
     textMessages = (
       <div>
         {
           this.state.text.map((text, index) => {
-            return <Validation
-                      length={text.length}
-                      key={text.id}
-                      output={text.validationMessage}
-                      count={text.length}
-                      change={(event) => this.updateText(event, text.id)}
-                      style={inlineStyle}
-                      />
+            return (
+              <div key={text.id}>
+                <input type='text' onChange={(event) => this.updateText(event, text.id)} />
+                <Validation
+                        output={text.validationMessage}
+                        style={inlineStyle}
+                        />
+                <CharCount
+                        length={text.length}
+                        style={inlineStyle}
+                        />
+              </div>
+            )
           })
         }
       </div>

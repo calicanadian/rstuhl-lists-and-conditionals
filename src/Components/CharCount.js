@@ -1,11 +1,11 @@
 import React from 'react';
 
-const validation = (props) => {
+const charcount = (props) => {
   return (
     <div style={props.style} >
-      <p>{props.output}</p>
+      <p>{props.length}</p>
     </div>
   )
 }
 
-export default validation;
+export default charcount;
