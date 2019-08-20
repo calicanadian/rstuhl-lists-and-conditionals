@@ -48,6 +48,7 @@ class App extends Component {
                       length={text.length}
                       key={text.id}
                       output={text.validationMessage}
+                      count={text.length}
                       change={(event) => this.updateText(event, text.id)}
                       style={inlineStyle}
                       />

@@ -4,7 +4,7 @@ const validation = (props) => {
   return (
     <div>
       <input style={props.style} type='text' onChange={props.change} />
-      <p>{props.output}</p>
+      <pre><p>{props.output}&nbsp;&nbsp;&nbsp;{props.count}</p></pre>
     </div>
   )
 }
